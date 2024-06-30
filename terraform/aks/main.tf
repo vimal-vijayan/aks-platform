@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "resource_group_name" {
-  name     = "rg-${local.app_name}-aks--${local.workspace_spec.env}"
+  name     = "rg-${local.app_name}-aks-${local.workspace_spec.env}"
   location = "West Europe"
   tags = {
     owner = "vimal"
