@@ -1,4 +1,14 @@
 terraform {
+  cloud {
+    organization = "optimus"
+    hostname = "app.terraform.io"
+
+    workspaces {
+      project = "AKS"
+      name = "aks-dev"
+    }
+  }
+
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
@@ -7,9 +17,8 @@ terraform {
   }
 }
 
+
+# Define the Azure provider
 provider "azurerm" {
-  # Configuration options
-  features {
-    
-  }
+    features {}
 }

@@ -6,17 +6,17 @@ locals {
     default = {
       env = "dev"
     },
-    dev = {
+    aks-dev = {
       env = "dev"
     },
-    stage = {
+    aks-stage = {
       env = "stage"
     },
-    prod = {
+    aks-prod = {
       env = "prod"
     }
   }
   environment     = lookup(local.workspace, terraform.workspace, "false").env
-  environmentvars = contains(keys(local.workspace), terraform.workspace) ? terraform.workspace : "dev"
-  workspace_spec  = merge(local.workspace["dev"], local.workspace[local.environmentvars])
+  environmentvars = contains(keys(local.workspace), terraform.workspace) ? terraform.workspace : "aks-dev"
+  workspace_spec  = merge(local.workspace["aks-dev"], local.workspace[local.environmentvars])
 }

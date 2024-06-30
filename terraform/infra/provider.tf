@@ -4,7 +4,7 @@ terraform {
     hostname = "app.terraform.io"
 
     workspaces {
-      project = "optimus"
+      project = "AKS"
       name = "infra-dev"
     }
   }
